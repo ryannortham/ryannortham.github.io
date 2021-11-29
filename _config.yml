@@ -23,10 +23,10 @@ future: true
 
 title: Ryan Northam                                 # the main title
 
-tagline: Thoughts about DevOps, Cloud, and Agile    # it will display as the sub-title
+tagline: Thoughts about DevOps, Azure, and Agile.    # it will display as the sub-title
 
 description: >-                                     # used by seo meta and the atom feed
-  Ryan Northam's personal blog. Thoughts about DevOps, Cloud, and Agile
+  Ryan Northam's personal blog. Thoughts about DevOps, Azure, and Agile.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://ryannortham.github.io'
