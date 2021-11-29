@@ -8,9 +8,6 @@
   icon: 'fab fa-linkedin'
   url:  'https://www.linkedin.com/in/ryan-northam-87880245/'
 -
-  type: twitter
-  icon: 'fab fa-twitter'
--
   type: email
   icon: 'fas fa-envelope'
   noblank: true            # open link in current tab
@@ -18,7 +15,9 @@
   type: rss
   icon: 'fas fa-rss'
   noblank: true
-
+# -
+#   type: twitter
+#   icon: 'fab fa-twitter'
 # -
 #   type: stack-overflow
 #   icon: 'fab fa-stack-overflow'

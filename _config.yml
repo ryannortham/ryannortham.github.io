@@ -18,32 +18,32 @@ timezone: Australia/Melbourne
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Ryan Northam                          # the main title
+title: Ryan Northam                                 # the main title
 
-tagline: Thoughts about DevOps, Cloud, and Agile   # it will display as the sub-title
+tagline: Thoughts about DevOps, Cloud, and Agile    # it will display as the sub-title
 
-description: >-                        # used by seo meta and the atom feed
+description: >-                                     # used by seo meta and the atom feed
   Ryan Northam's personal blog. Thoughts about DevOps, Cloud, and Agile
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://ryannortham.github.io'
 
 github:
-  username: ryannortham             # change to your github username
+  username: ryannortham                             # change to your github username
 
 twitter:
-  username: r_northam          # change to your twitter username
+  username: r_northam                               # change to your twitter username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Ryan Northam
-  email: ryan.northam@gmail.com             # change to your email address
+  email: ryan.northam@gmail.com                     # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/r_northam      # change to your twitter homepage
-    - https://github.com/ryannortham     # change to your github homepage
     - https://www.linkedin.com/in/ryan-northam-87880245/
+    - https://github.com/ryannortham                # change to your github homepage
+    # - https://twitter.com/r_northam                 # change to your twitter homepage
 
 # google_site_verification: google_meta_tag_verification # change to your verification string
 
@@ -84,8 +84,8 @@ avatar: ./assets/img/avatars/bw400x400.jpg
 toc: true
 
 disqus:
-  comments: false  # boolean type, the global switch for posts comments.
-  shortname: ''    # Fill with your Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+  comments: true  # boolean type, the global switch for posts comments.
+  shortname: 'ryannortham'    # Fill with your Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 paginate: 10
 
