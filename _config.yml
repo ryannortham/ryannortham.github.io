@@ -46,15 +46,14 @@ social:
     # The first element serves as the copyright owner's link
     - https://www.linkedin.com/in/ryan-northam-87880245/
     - https://github.com/ryannortham                # change to your github homepage
-    # - https://twitter.com/r_northam                 # change to your twitter homepage
+    - https://twitter.com/r_northam                  # change to your twitter homepage
 
 # google_site_verification: google_meta_tag_verification # change to your verification string
 
 # ↑ --------------------------
 
-
-# google_analytics:
-  id: 'G-34E2TL1QEM'              # fill in your Google Analytics ID
+google_analytics:
+  id: 'G-TCLESX3HFD'                                # fill in your Google Analytics ID
   # Google Analytics pageviews report settings
   pv:
     proxy_endpoint:   # fill in the Google Analytics superProxy endpoint of Google App Engine
