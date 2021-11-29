@@ -1,8 +1,12 @@
 #  The contact options.
-
+# icons powered by <https://fontawesome.com/>
 -
   type: github
   icon: 'fab fa-github'
+-
+  type: linkedin
+  icon: 'fab fa-linkedin'
+  url:  'https://www.linkedin.com/in/ryan-northam-87880245/'
 -
   type: twitter
   icon: 'fab fa-twitter'
@@ -15,15 +19,6 @@
   icon: 'fas fa-rss'
   noblank: true
 
-# Uncomment and complete the url below to enable more contact options
-# -
-#   type: mastodon
-#   icon: 'fab fa-mastodon'   # icons powered by <https://fontawesome.com/>
-#   url:  ''                  # Fill with your mastodon account page
-# -
-#   type: linkedin
-#   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
-#   url:  ''                  # Fill with your Linkedin homepage
 # -
 #   type: stack-overflow
 #   icon: 'fab fa-stack-overflow'

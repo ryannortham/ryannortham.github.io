@@ -18,14 +18,12 @@ timezone: Australia/Melbourne
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy                          # the main title
+title: Ryan Northam                          # the main title
 
-tagline: A text-focused Jekyll theme   # it will display as the sub-title
+tagline: Thoughts about DevOps, Cloud, and Agile   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, portfolio, sidebar,
-  bootstrap Jekyll theme with responsive web design
-  and focuses on text presentation.
+  Ryan Northam's personal blog. Thoughts about DevOps, Cloud, and Agile
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://ryannortham.github.io'
@@ -47,17 +45,17 @@ social:
     - https://github.com/ryannortham     # change to your github homepage
     - https://www.linkedin.com/in/ryan-northam-87880245/
 
-google_site_verification: google_meta_tag_verification # change to your verification string
+# google_site_verification: google_meta_tag_verification # change to your verification string
 
 # ↑ --------------------------
 
 
-google_analytics:
-  id: ''              # fill in your Google Analytics ID
-  # Google Analytics pageviews report settings
-  pv:
-    proxy_endpoint:   # fill in the Google Analytics superProxy endpoint of Google App Engine
-    cache_path:       # the local PV cache data, friendly to visitors from GFW region
+# google_analytics:
+#   id: ''              # fill in your Google Analytics ID
+#   # Google Analytics pageviews report settings
+#   pv:
+#     proxy_endpoint:   # fill in the Google Analytics superProxy endpoint of Google App Engine
+#     cache_path:       # the local PV cache data, friendly to visitors from GFW region
 
 # Prefer color scheme setting.
 #
@@ -77,13 +75,13 @@ theme_mode:   # [light|dark]
 # will be added to all image (site avatar & posts' images) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn:
+# img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: .\_site\assets\img\photos\RyanAvatar.png
 
 # boolean type, the global switch for ToC in posts.
-toc: true
+toc: false
 
 disqus:
   comments: false  # boolean type, the global switch for posts comments.
