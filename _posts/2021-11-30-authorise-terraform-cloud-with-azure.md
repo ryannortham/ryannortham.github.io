@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Automate Azure Service Principles and Terraform Cloud Using Fish Shell"
+title: "Automate Azure Service Principles and Terraform Cloud Variables using Fish Shell"
 date: 2021-11-30 16:00:00 +1100
 categories: Blogging Tutorial
 tags: azure terraform fish
