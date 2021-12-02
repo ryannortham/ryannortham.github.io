@@ -154,8 +154,8 @@ Here we'll loop through our 'dictionary' and substitute our key-values into the 
 ```shell
 for i in (seq 1 (count $varkey))
 	sed -e "s/my-workspace/$TF_WORKSPACE/" -e "s/my-key/$varkey[$i]/" -e "s/my-value/$varvalue[$i]/" < variable.template.json > variable.json
-	echo "Ses --header "Authorization: Bearer $TF_TOKEN" --header "Content-Type: application/vnd.api+json" --data @variable.json "https://app.terraform.io/api/v2/vars?filter%5Borganization%5D%5Bname%5D=$TF_ORG&filtting variable $varkey[$i] with value $varvalue[$i]"
-  	curl -ter%5Bworkspace%5D%5Bname%5D=$TF_WORKSPACE"
+	echo "Setting variable $varkey[$i] with value $varvalue[$i]"
+  curl -s --header "Authorization: Bearer $TF_TOKEN" --header "Content-Type: application/vnd.api+json" --data @variable.json "https://app.terraform.io/api/v2/vars?filter%5Borganization%5D%5Bname%5D=$TF_ORG&filter%5Bworkspace%5D%5Bname%5D=$TF_WORKSPACE"
 end
 ```
 
