@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Automate Azure Service Principles and Terraform Cloud Variables using Fish Shell"
+title: "Automate Azure Service principals and Terraform Cloud Variables using Fish Shell"
 date: 2021-12-02 16:00:00 +1100
 categories: Blogging Tutorial
 tags: azure terraform fish
@@ -15,26 +15,26 @@ image:
 
 ## Introduction
 
-In this tutorial i'll show you how to create an Azure Service Principle using Azure CLI, and automatically upload the service principle details to Terraform Cloud. This approach minimises 'click-ops' and sets us up to use Terraform Cloud to deploy our Azure infrastructure.
+In this tutorial I'll show you how to create an Azure Service principal using Azure CLI, and automatically upload the service principal details to Terraform Cloud. This approach minimises 'click-ops' and sets us up to use Terraform Cloud to deploy our Azure infrastructure.
 
 ## Prerequisite Tasks
 
 ### Command-line Tools
 
-Install the following command-line tools if you don't already have them in your development environment:
+Install the following command-line tools if you don't already have them setup in your development environment:
 
 #### [Fish Shell](https://fishshell.com/)
-My shell of choice for this tutorial. It has great features like syntax highlighting and auto completion working out of the box. Its syntax is a little different from bash, but this shouldn't be a huge leap if you are already familiar with that shell.
+My shell of choice for this tutorial. It has great features like syntax highlighting and auto completion working out of the box. Its syntax is a little different from bash, but this shouldn't be a huge leap if you are already familiar with bash.
 
 #### [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt)
-We'll use this to connect to Azure and create our service principle. Install it by running:
+We'll use this to connect to Azure and create our service principal. Install it by running:
 
 ````shell
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 ````
 
 #### [jq](https://stedolan.github.io/jq/)
-A lightweight command-line JSON processor. We'll use this to extract the service principle details returned by Azure CLI. Install it by running:
+A lightweight command-line JSON processor. We'll use this to extract the service principal details returned by Azure CLI. Install it by running:
 
 ````shell
 sudo apt-get install jq
@@ -68,7 +68,7 @@ In the Azure portal, go to your target subscription and take note of the subscri
 
 ![subscription details](./../../assets/img/posts/2021-12-02/subscription.jpg)
 
-Store these values in environment variables. We'll also set name of the service principle that we want to create here:
+Store these values in environment variables. We'll also set name of the service principal that we want to create here:
 
 ```shell
 set ARM_SUB_ID "<insert target subscription id>"
@@ -80,9 +80,9 @@ That's all of the manual setups tasks done! We now have enough information to au
 
 ## Script Explanation
 
-### Service Principle Creation
+### Service principal Creation
 
-Here we'll use Azure CLI to access our subscription and create the service principle for Terraform Cloud. Azure CLI returns the principle details as a json response - we'll store this in the ``ARM_SP_DETAILS`` variable:
+Here we'll use Azure CLI to access our subscription and create the service principal for Terraform Cloud. Azure CLI returns the principal details as a json response - we'll store this in the ``ARM_SP_DETAILS`` variable:
 
 ```shell
 az login --tenant $ARM_TENANT_NAME.onmicrosoft.com
@@ -90,7 +90,7 @@ az account set --subscription $ARM_SUB_ID
 set ARM_SP_DETAILS (az ad sp create-for-rbac --role contributor --name $ARM_SP_NAME --sdk-auth)
 ```
 
-### Extract Service Principle Properties Using jq:
+### Extract Service principal Properties Using jq:
 
 The json response contains the information we need to store in Terraform Cloud - we'll use jq to extract the required elements. The ``--raw-output`` option prevents the guids from being converted to strings, which would cause issues with our script further down the track.
 
@@ -102,7 +102,7 @@ set ARM_TENANT_ID (echo $ARM_SP_DETAILS | jq '.tenantId' --raw-output)
 
 ### Set Terraform Cloud Variables
 
-Now that we've created our Azure service principle, we're going to pass its details to the Terraform Cloud API. The API accepts data in following json format/template, which we'll write out to a temporary file:
+Now that we've created our Azure service principal, we're going to pass its details to the Terraform Cloud API. The API accepts data in following json format/template, which we'll write out to a temporary file:
 
 
 ````shell
@@ -168,11 +168,11 @@ rm variable.json
 
 ## Check Results
 
-### Azure Service Principle
+### Azure Service principal
 
-Open the Azure portal and go to Azure AD > App registrations. You should be able to see your service principle:
+Open the Azure portal and go to Azure AD > App registrations. You should be able to see your service principal:
 
-![service principle in Azure portal](./../../assets/img/posts/2021-12-02/sp-result.jpg)
+![service principal in Azure portal](./../../assets/img/posts/2021-12-02/sp-result.jpg)
 
 ### Terraform Cloud Variables
 
@@ -194,7 +194,7 @@ set ARM_SUB_ID "<insert target subscription id>"
 set ARM_TENANT_NAME "<insert Azure tenant name>"
 set ARM_SP_NAME "sp-example"
 
-# Service principle creation
+# Service principal creation
 az login --tenant $ARM_TENANT_NAME.onmicrosoft.com
 az account set --subscription $ARM_SUBSCRIPTION_ID
 set ARM_SP_DETAILS (az ad sp create-for-rbac --role contributor --name $ARM_SP_NAME --sdk-auth)
