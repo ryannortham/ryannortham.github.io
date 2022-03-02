@@ -1,0 +1,21 @@
+{
+  "data": {
+    "type":"vars",
+    "attributes": {
+      "key":"ARM_TENANT_ID",
+      "value":"6b7d3a1d-4be6-417f-929f-37b0119ba799",
+      "category":"env",
+      "hcl":false,
+      "sensitive":true,
+      "description":""
+    }
+  },
+  "relationships": {
+    "workspace": {
+      "data": {
+        "id":"azland-demo",
+        "type":"workspaces"
+      }
+    }
+  }
+}
