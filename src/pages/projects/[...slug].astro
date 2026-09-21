@@ -31,7 +31,7 @@ const { Content } = await render(project);
     </div>
     <header class="my-10 space-y-2">
       <div class="animate text-sm">Updated <FormattedDate date={project.data.date} /></div>
-      <h1 class="animate text-3xl font-semibold leading-tight text-black dark:text-white">
+      <h1 class="animate text-3xl font-semibold leading-tight text-ink-strong dark:text-white">
         {project.data.title}
       </h1>
       {(project.data.demoURL || project.data.repoURL) && (

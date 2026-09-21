@@ -29,7 +29,7 @@ const workEntries = (await getCollection("work"))
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION} titleTemplate={false}>
   <Container>
-    <h1 class="animate text-3xl font-semibold leading-tight text-black dark:text-white">
+    <h1 class="animate text-3xl font-semibold leading-tight text-ink-strong dark:text-white">
       Hi, I'm Ryan <span class="text-2xl" aria-hidden="true">👋🏻</span>
     </h1>
 
@@ -49,7 +49,7 @@ const workEntries = (await getCollection("work"))
 
       <section class="animate space-y-6">
         <div class="flex flex-wrap items-center justify-between gap-y-2">
-          <h2 class="text-xl font-semibold text-black dark:text-white">Latest posts</h2>
+          <h2 class="text-xl font-semibold text-ink-strong dark:text-white">Latest posts</h2>
           <Link href="/blog/">See all posts</Link>
         </div>
         <ul class="flex flex-col gap-4">
@@ -59,7 +59,7 @@ const workEntries = (await getCollection("work"))
 
       <section class="animate space-y-6">
         <div class="flex flex-wrap items-center justify-between gap-y-2">
-          <h2 class="text-xl font-semibold text-black dark:text-white">Work experience</h2>
+          <h2 class="text-xl font-semibold text-ink-strong dark:text-white">Work experience</h2>
           <Link href="/work/">See all work</Link>
         </div>
         <ul class="flex flex-col gap-6">
@@ -68,7 +68,7 @@ const workEntries = (await getCollection("work"))
               <div class="text-sm opacity-75">
                 {dateRange(entry.data.dateStart, entry.data.dateEnd)}
               </div>
-              <div class="font-semibold text-black dark:text-white">
+              <div class="font-semibold text-ink-strong dark:text-white">
                 {entry.data.company}
               </div>
               <div class="text-sm opacity-75">{entry.data.role}</div>
@@ -80,7 +80,7 @@ const workEntries = (await getCollection("work"))
 
       <section class="animate space-y-6">
         <div class="flex flex-wrap items-center justify-between gap-y-2">
-          <h2 class="text-xl font-semibold text-black dark:text-white">Recent projects</h2>
+          <h2 class="text-xl font-semibold text-ink-strong dark:text-white">Recent projects</h2>
           <Link href="/projects/">See all projects</Link>
         </div>
         <ul class="flex flex-col gap-4">
@@ -89,7 +89,7 @@ const workEntries = (await getCollection("work"))
       </section>
 
       <section class="animate space-y-4">
-        <h2 class="text-xl font-semibold text-black dark:text-white">Elsewhere</h2>
+        <h2 class="text-xl font-semibold text-ink-strong dark:text-white">Elsewhere</h2>
         <ul class="flex flex-wrap gap-2">
           {SOCIALS.map((social, index) => (
             <li class="flex gap-x-2">

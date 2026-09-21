@@ -25,10 +25,10 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
 <PageLayout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
   <Container>
     <div class="space-y-10">
-      <h1 class="animate text-3xl font-semibold leading-tight text-black dark:text-white">Blog</h1>
+      <h1 class="animate text-3xl font-semibold leading-tight text-ink-strong dark:text-white">Blog</h1>
       {years.map((year) => (
         <section class="animate space-y-4">
-          <h2 class="text-xl font-semibold text-black dark:text-white">{year}</h2>
+          <h2 class="text-xl font-semibold text-ink-strong dark:text-white">{year}</h2>
           <ul class="flex flex-col gap-4">
             {postsByYear[year].map((post) => <li><ArrowCard entry={post} /></li>)}
           </ul>

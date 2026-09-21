@@ -13,7 +13,3 @@ dist/
 
 # system files
 .DS_Store
-
-# tutorial scratch files
-variable.json
-variable.template.json

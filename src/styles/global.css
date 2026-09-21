@@ -4,6 +4,9 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-paper: #f4efe6;
+  --color-ink: #403c36;
+  --color-ink-strong: #211f1c;
 }
 
 html {
@@ -23,13 +26,13 @@ body {
 body {
   @apply font-sans leading-7 antialiased;
   @apply flex flex-col;
-  @apply bg-stone-100 dark:bg-stone-900;
-  @apply text-black/50 dark:text-white/75;
+  @apply bg-paper dark:bg-stone-900;
+  @apply text-ink dark:text-white/75;
 }
 
 body > header {
   @apply fixed top-0 left-0 right-0 z-50 py-5;
-  @apply bg-stone-100/75 dark:bg-stone-900/25;
+  @apply bg-paper/80 dark:bg-stone-900/25;
   @apply backdrop-blur-sm saturate-200;
 }
 
@@ -42,20 +45,24 @@ body > footer {
 }
 
 article {
-  @apply prose max-w-full dark:prose-invert prose-img:mx-auto prose-img:my-auto;
+  @apply prose prose-stone max-w-full dark:prose-invert prose-img:mx-auto prose-img:my-auto;
   @apply prose-headings:font-semibold prose-h2:text-xl prose-h3:text-base prose-h4:text-base;
-  @apply prose-headings:text-black prose-headings:dark:text-white;
+  @apply prose-headings:text-ink-strong prose-headings:dark:text-white;
+}
+
+::selection {
+  @apply bg-amber-200/70 text-ink-strong dark:bg-amber-200/25 dark:text-white;
 }
 
 @layer utilities {
   article a {
     @apply text-current underline underline-offset-2;
-    @apply decoration-black/15 dark:decoration-white/30;
+    @apply decoration-ink/25 dark:decoration-white/30;
     @apply transition-colors duration-300 ease-in-out;
   }
   article a:hover {
-    @apply text-black dark:text-white;
-    @apply decoration-black/25 dark:decoration-white/50;
+    @apply text-ink-strong dark:text-white;
+    @apply decoration-ink/45 dark:decoration-white/50;
   }
 }
 
@@ -68,10 +75,16 @@ article {
   @apply opacity-100 translate-y-0;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animate {
+    @apply opacity-100 translate-y-0 transition-none;
+  }
+}
+
 html #back-to-top {
-  @apply opacity-0 pointer-events-none;
+  @apply invisible opacity-0 pointer-events-none;
 }
 
 html.scrolled #back-to-top {
-  @apply opacity-100 pointer-events-auto;
+  @apply visible opacity-100 pointer-events-auto;
 }

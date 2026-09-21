@@ -2,7 +2,6 @@ import type { Metadata, Socials } from "@types";
 
 export const SITE = {
   NAME: "Ryan Northam",
-  URL: "https://ryannortham.blog",
   NUM_POSTS_ON_HOMEPAGE: 3,
   NUM_WORKS_ON_HOMEPAGE: 1,
   NUM_PROJECTS_ON_HOMEPAGE: 3,
@@ -31,12 +30,10 @@ export const PROJECTS: Metadata = {
 
 export const SOCIALS: Socials = [
   {
-    NAME: "github",
     LABEL: "GitHub",
     HREF: "https://github.com/ryannortham",
   },
   {
-    NAME: "linkedin",
     LABEL: "LinkedIn",
     HREF: "https://www.linkedin.com/in/ryan-northam-87880245/",
   },
