@@ -1,0 +1,47 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import BackToPrev from "@components/BackToPrev.astro";
+import Container from "@components/Container.astro";
+import FormattedDate from "@components/FormattedDate.astro";
+import Link from "@components/Link.astro";
+import PageLayout from "@layouts/PageLayout.astro";
+
+export async function getStaticPaths() {
+  const projects = (await getCollection("projects")).filter(
+    (project) => !project.data.draft,
+  );
+  return projects.map((project) => ({
+    params: {
+      slug: project.id.replace(/\.(md|mdx)$/, "").replace(/\/index$/, ""),
+    },
+    props: project,
+  }));
+}
+
+type Props = CollectionEntry<"projects">;
+
+const project = Astro.props;
+const { Content } = await render(project);
+---
+
+<PageLayout title={project.data.title} description={project.data.description}>
+  <Container>
+    <div class="animate">
+      <BackToPrev href="/projects/">Back to projects</BackToPrev>
+    </div>
+    <header class="my-10 space-y-2">
+      <div class="animate text-sm">Updated <FormattedDate date={project.data.date} /></div>
+      <h1 class="animate text-3xl font-semibold leading-tight text-black dark:text-white">
+        {project.data.title}
+      </h1>
+      {(project.data.demoURL || project.data.repoURL) && (
+        <nav class="animate flex gap-1" aria-label="Project links">
+          {project.data.demoURL && <Link href={project.data.demoURL} external>demo</Link>}
+          {project.data.demoURL && project.data.repoURL && <span>/</span>}
+          {project.data.repoURL && <Link href={project.data.repoURL} external>repository</Link>}
+        </nav>
+      )}
+    </header>
+    <article class="animate"><Content /></article>
+  </Container>
+</PageLayout>

@@ -1,0 +1,106 @@
+---
+import { getCollection } from "astro:content";
+import ArrowCard from "@components/ArrowCard.astro";
+import Container from "@components/Container.astro";
+import Link from "@components/Link.astro";
+import { HOME, SITE, SOCIALS } from "@consts";
+import PageLayout from "@layouts/PageLayout.astro";
+import { dateRange } from "@lib/utils";
+
+const posts = (await getCollection("posts"))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
+
+const projects = (await getCollection("projects"))
+  .filter((project) => !project.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
+
+const workEntries = (await getCollection("work"))
+  .sort(
+    (a, b) =>
+      (b.data.dateStart?.valueOf() ?? Number.MAX_SAFE_INTEGER) -
+      (a.data.dateStart?.valueOf() ?? Number.MAX_SAFE_INTEGER),
+  )
+  .slice(0, SITE.NUM_WORKS_ON_HOMEPAGE);
+
+---
+
+<PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION} titleTemplate={false}>
+  <Container>
+    <h1 class="animate text-3xl font-semibold leading-tight text-black dark:text-white">
+      Hi, I'm Ryan <span class="text-2xl" aria-hidden="true">👋🏻</span>
+    </h1>
+
+    <div class="mt-8 space-y-16">
+      <section>
+        <article class="space-y-4">
+          <p class="animate">
+            I'm a Lead Software Engineer at Mantel, based in Melbourne, Australia.
+            I build software, developer platforms, cloud infrastructure, and the
+            tooling that helps teams deliver reliable systems.
+          </p>
+          <p class="animate">
+            This site collects my writing, professional experience, and projects.
+          </p>
+        </article>
+      </section>
+
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
+          <h2 class="text-xl font-semibold text-black dark:text-white">Latest posts</h2>
+          <Link href="/blog/">See all posts</Link>
+        </div>
+        <ul class="flex flex-col gap-4">
+          {posts.map((post) => <li><ArrowCard entry={post} /></li>)}
+        </ul>
+      </section>
+
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
+          <h2 class="text-xl font-semibold text-black dark:text-white">Work experience</h2>
+          <Link href="/work/">See all work</Link>
+        </div>
+        <ul class="flex flex-col gap-6">
+          {workEntries.map((entry) => (
+            <li>
+              <div class="text-sm opacity-75">
+                {dateRange(entry.data.dateStart, entry.data.dateEnd)}
+              </div>
+              <div class="font-semibold text-black dark:text-white">
+                {entry.data.company}
+              </div>
+              <div class="text-sm opacity-75">{entry.data.role}</div>
+              <p class="mt-3">{entry.data.summary}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
+          <h2 class="text-xl font-semibold text-black dark:text-white">Recent projects</h2>
+          <Link href="/projects/">See all projects</Link>
+        </div>
+        <ul class="flex flex-col gap-4">
+          {projects.map((project) => <li><ArrowCard entry={project} /></li>)}
+        </ul>
+      </section>
+
+      <section class="animate space-y-4">
+        <h2 class="text-xl font-semibold text-black dark:text-white">Elsewhere</h2>
+        <ul class="flex flex-wrap gap-2">
+          {SOCIALS.map((social, index) => (
+            <li class="flex gap-x-2">
+              <Link href={social.HREF} external aria-label={`${SITE.NAME} on ${social.LABEL}`}>
+                {social.LABEL}
+              </Link>
+              {index < SOCIALS.length - 1 && <span aria-hidden="true">/</span>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  </Container>
+</PageLayout>

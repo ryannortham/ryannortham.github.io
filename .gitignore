@@ -1,17 +1,19 @@
-# hidden files
-.*
-!.git*
-!.editorconfig
-!.nojekyll
-!.travis.yml
+# dependencies
+node_modules/
+.pnpm-store/
 
-# bundler cache
-_site
-vendor
+# build output
+dist/
+.astro/
 
-# rubygem
-*.gem
+# environment files
+.env
+.env.*
+!.env.example
 
-# npm dependencies
-node_modules
-package-lock.json
+# system files
+.DS_Store
+
+# tutorial scratch files
+variable.json
+variable.template.json
