@@ -1,10 +1,10 @@
-# ryannortham.blog
+# ryannortham.dev
 
-Source for [ryannortham.blog](https://ryannortham.blog), a static personal site
+Source for [ryannortham.dev](https://ryannortham.dev), a static personal site
 and technical blog built with [Astro](https://astro.build).
 
 The visual foundation is [Astro Nano](https://github.com/markhorn-dev/astro-nano),
-adapted for this site and deployed to GitHub Pages.
+adapted for this site and deployed to Cloudflare Pages.
 
 ## Development
 
@@ -29,13 +29,12 @@ pnpm build
 ## Content
 
 Content is split across `src/content/posts`, `src/content/work`, and
-`src/content/projects`. Public images and the custom-domain record live in
-`public`.
+`src/content/projects`. Public images live in `public`.
 
 ## Deployment
 
-Pushing `main` runs the GitHub Pages workflow in `.github/workflows/deploy.yml`.
-The Pages source must be set to **GitHub Actions** in the repository settings.
+Cloudflare Pages builds the site with `pnpm build` and publishes the `dist`
+directory. The production custom domain is `ryannortham.dev`.
 
 ## License
 
