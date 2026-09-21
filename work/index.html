@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="en"><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)"><link rel="icon" type="image/svg+xml" href="/favicon-light.svg" media="(prefers-color-scheme: light)"><link rel="icon" type="image/x-icon" href="/favicon-light.svg"><meta name="generator" content="Astro v7.3.3"><!-- Font preloads --><link rel="preload" href="/_astro/inter-latin-400-normal.C38fXH4l.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/inter-latin-600-normal.LgqL8muc.woff2" as="font" type="font/woff2" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://ryannortham.blog/work/"><!-- Primary Meta Tags --><title>Work | Ryan Northam</title><meta name="title" content="Work | Ryan Northam"><meta name="description" content="Ryan Northam's professional experience."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://ryannortham.blog/work/"><meta property="og:title" content="Work | Ryan Northam"><meta property="og:description" content="Ryan Northam's professional experience."><meta property="og:image" content="https://ryannortham.blog/assets/img/banners/github-azure-1200x630.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CYDbzu1r.js"></script><script type="module">document.addEventListener(`astro:before-swap`,e=>[...e.newDocument.head.querySelectorAll(`link[as="font"]`)].forEach(e=>e.remove()));</script><script>
+  function init() {
+    preloadTheme();
+    onScroll();
+    animate();
+
+    const backToTop = document.getElementById("back-to-top");
+    backToTop?.addEventListener("click", (event) => scrollToTop(event));
+
+    const backToPrev = document.getElementById("back-to-prev");
+    backToPrev?.addEventListener("click", () => window.history.back());
+
+    const themeToggleButton = document.getElementById("theme-toggle-button");
+    updateThemeToggle(document.documentElement.classList.contains("dark"));
+    themeToggleButton?.addEventListener("click", () => {
+      const useDarkTheme = !document.documentElement.classList.contains("dark");
+      localStorage.setItem("theme", useDarkTheme ? "dark" : "light");
+      toggleTheme(useDarkTheme);
+    });
+
+    window.matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", event => {
+        if (localStorage.theme === "system" || !localStorage.theme) {
+          toggleTheme(event.matches);
+        }
+      }
+    );
+
+    document.addEventListener("scroll", onScroll);
+  }
+
+  function animate() {
+    const animateElements = document.querySelectorAll(".animate");
+
+    animateElements.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add("show");
+      }, index * 150);
+    });
+  }
+
+  function onScroll() {
+    if (window.scrollY > 0) {
+      document.documentElement.classList.add("scrolled");
+    } else {
+      document.documentElement.classList.remove("scrolled");
+    }
+  }
+
+  function scrollToTop(event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+  function toggleTheme(dark) {
+    const css = document.createElement("style");
+
+    css.appendChild(
+      document.createTextNode(
+        `* {
+             -webkit-transition: none !important;
+             -moz-transition: none !important;
+             -o-transition: none !important;
+             -ms-transition: none !important;
+             transition: none !important;
+          }
+        `,
+      )
+    );
+
+    document.head.appendChild(css);
+
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+    updateThemeToggle(dark);
+
+  window.getComputedStyle(css).opacity;
+    document.head.removeChild(css);
+  }
+
+  function updateThemeToggle(dark) {
+    const button = document.getElementById("theme-toggle-button");
+    const label = dark ? "Use light theme" : "Use dark theme";
+    button?.setAttribute("aria-label", label);
+    button?.setAttribute("title", label);
+  }
+
+  function preloadTheme() {
+    const userTheme = localStorage.theme;
+
+    if (userTheme === "light" || userTheme === "dark") {
+      toggleTheme(userTheme === "dark");
+    } else {
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => init());
+  document.addEventListener("astro:after-swap", () => init());
+  preloadTheme();
+</script><link rel="stylesheet" href="/_astro/PageLayout.BRhUM-x1.css"></head><body><header><div class="mx-auto max-w-3xl px-5"><div class="flex flex-wrap gap-y-2 justify-between"><a href="/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out"><div class="font-semibold">Ryan Northam</div></a><nav class="flex gap-1" aria-label="Primary navigation"><a href="/blog/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2">
+          blog
+        </a><span>/</span><a href="/work/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2">
+          work
+        </a><span>/</span><a href="/projects/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2">
+          projects
+        </a></nav></div></div></header><main><div class="mx-auto max-w-3xl px-5"><div class="space-y-10"><h1 class="animate text-3xl font-semibold leading-tight text-black dark:text-white">Work</h1><div class="space-y-12"><section class="animate"><h2 class="text-xl font-semibold text-black dark:text-white"><a href="https://www.linkedin.com/company/13577383/" target="_blank" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2">Mantel</a></h2><div class="text-sm opacity-75">Full-time · Melbourne, Victoria, Australia</div><ul class="mt-7 space-y-12 border-l border-black/15 dark:border-white/20"><li class="relative pl-6"><span class="absolute -left-1 top-2 size-2 rounded-full bg-stone-400 dark:bg-stone-500" aria-hidden="true"></span><h3 class="font-semibold text-black dark:text-white">Lead Software Engineer</h3><div class="text-sm opacity-75">June 2026 – Present</div><article class="mt-4"><h4 id="myob--public-mcp-service">MYOB — Public MCP Service</h4>
+<ul>
+<li>Designed and delivered the MYOB Connector, a partner-certified MCP service
+bringing MYOB Business financial data into the Claude and ChatGPT connector
+marketplaces. Featured in the Australian Financial Review.</li>
+<li>Architected the FastMCP service around OAuth 2.0/JWT verification, RFC 8693
+on-behalf-of token exchange, and Redis-backed token caching.</li>
+<li>Hardened the service for production with stateless Streamable HTTP,
+concurrent request correctness, input validation, privacy masking, and
+OpenTelemetry observability.</li>
+<li>Led the FastMCP 4 and MCP SDK 2 migration, updating protocol handling,
+authentication metadata, client identity, telemetry, and regression coverage.</li>
+</ul>
+</article></li><li class="relative pl-6"><span class="absolute -left-1 top-2 size-2 rounded-full bg-stone-400 dark:bg-stone-500" aria-hidden="true"></span><h3 class="font-semibold text-black dark:text-white">Senior Software Engineer</h3><div class="text-sm opacity-75">Dec 2023 – May 2026</div><article class="mt-4"><h4 id="nab--ai-incident-first-responder">NAB — AI Incident First Responder</h4>
+<ul>
+<li>Led the design and delivery of an AI-driven SRE agent that ingests ServiceNow
+incidents, analyses logs and observability signals, and generates RCA-style
+insights to speed up incident resolution.</li>
+<li>Architected integrations with ServiceNow, OpenSearch, Grafana, and AppDynamics
+via MCP and Strands.</li>
+<li>Delivered a real-time web interface using Next.js and CopilotKit for
+interactive investigation, streaming responses, and visible tool execution.</li>
+<li>Built end-to-end observability and evaluation using OpenTelemetry, the Grafana
+stack, MLflow, and Databricks.</li>
+</ul>
+<h4 id="nab--enterprise-ai-self-service-platform">NAB — Enterprise AI Self-Service Platform</h4>
+<ul>
+<li>Designed and built a framework to accelerate AI adoption, including an
+opinionated GitHub repository template with schema-validated configuration.</li>
+<li>Built automated Jenkins pipelines to orchestrate the full deployment lifecycle
+for Bedrock AgentCore applications, removing the platform team as a deployment
+bottleneck.</li>
+</ul>
+<h4 id="wesfarmers--aws-bedrock-agentcore-proof-of-concept">Wesfarmers — AWS Bedrock AgentCore Proof of Concept</h4>
+<ul>
+<li>Delivered a six-week AWS-sponsored prototype using Bedrock AgentCore and
+Strands Agents, including a business-information chatbot and an agent that
+generated structured proposal documents from user input.</li>
+<li>Integrated the solution with Slack, Confluence, and SharePoint.</li>
+</ul>
+<h4 id="entain--retail-platform-migration">Entain — Retail Platform Migration</h4>
+<ul>
+<li>Led a large-scale migration of in-store gaming terminals to a new retail
+platform integrated with Entain’s central management system.</li>
+<li>Built full-stack retail services, including Golang backend APIs using protobuf
+RPC, REST APIs, and a Vue.js admin portal.</li>
+<li>Extended a geolocation service to support region-based promotions using
+queryable MySQL geospatial data.</li>
+<li>Refactored a legacy broadcast partner feed API to modern Golang standards,
+with structured logging, metrics, and OpenAPI documentation.</li>
+</ul>
+</article></li><li class="relative pl-6"><span class="absolute -left-1 top-2 size-2 rounded-full bg-stone-400 dark:bg-stone-500" aria-hidden="true"></span><h3 class="font-semibold text-black dark:text-white">Senior Platform Engineer</h3><div class="text-sm opacity-75">Aug 2021 – Dec 2023</div><article class="mt-4"><h4 id="anz--platform-and-devops-engineering">ANZ — Platform and DevOps Engineering</h4>
+<ul>
+<li>Built an event-driven data validation service using GCP Cloud Functions and
+Golang.</li>
+<li>Built a Golang service to migrate Git repositories from legacy source control
+to GitHub Enterprise, with automated progress reporting and Slack notifications.</li>
+<li>Ran a proof of concept migrating CI pipelines from Bamboo to self-hosted
+GitHub Actions runners.</li>
+</ul>
+<h4 id="nsw-rural-fire-service--github-migration">NSW Rural Fire Service — GitHub Migration</h4>
+<ul>
+<li>Migrated source control to GitHub Enterprise Cloud EMU, integrating Azure
+Active Directory for automated onboarding and offboarding.</li>
+<li>Established branch protection and CODEOWNERS policies, and consolidated
+redundant security groups.</li>
+</ul>
+<h4 id="big-w--kubernetes-observability-uplift">Big W — Kubernetes Observability Uplift</h4>
+<ul>
+<li>Ran a gap analysis on Kubernetes monitoring and alerting coverage against
+industry best practice.</li>
+<li>Designed observability dashboards using Prometheus and Grafana for real-time
+cluster health visibility.</li>
+</ul>
+</article></li></ul></section></div></div></div></main><footer class="animate"><div class="mx-auto max-w-3xl px-5"><div class="relative"><div class="absolute right-0 -top-20"><button id="back-to-top" class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current rotate-90"><line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line><polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline></svg><div class="text-sm">Back to top</div></button></div></div><div class="flex justify-between items-center"><div>&copy; 2026 | Ryan Northam</div><div class="flex items-center"><button id="theme-toggle-button" aria-label="Toggle colour theme" class="group flex size-8 items-center justify-center rounded-full"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="hidden transition-colors duration-300 ease-in-out group-hover:stroke-black dark:block group-hover:dark:stroke-white"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="block transition-colors duration-300 ease-in-out group-hover:stroke-black dark:hidden group-hover:dark:stroke-white"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></div></div></footer></body></html>

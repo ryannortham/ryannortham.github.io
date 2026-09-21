@@ -1,5 +1,4 @@
 User-agent: *
+Allow: /
 
-Disallow: /norobots/
-
-Sitemap: https://ryannortham.blog/sitemap.xml
+Sitemap: https://ryannortham.blog/sitemap-index.xml
