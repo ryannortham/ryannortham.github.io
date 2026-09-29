@@ -4,7 +4,7 @@ Source for [ryannortham.dev](https://ryannortham.dev), a static personal site
 and technical blog built with [Astro](https://astro.build).
 
 The visual foundation is [Astro Nano](https://github.com/markhorn-dev/astro-nano),
-adapted for this site and deployed to Cloudflare Pages.
+adapted for this site and published through GitHub Pages.
 
 ## Development
 
@@ -33,8 +33,9 @@ Content is split across `src/content/posts`, `src/content/work`, and
 
 ## Deployment
 
-Cloudflare Pages builds the site with `pnpm build` and publishes the `dist`
-directory. The production custom domain is `ryannortham.dev`.
+`pnpm build` generates the `dist` directory. GitHub Pages serves the built site
+from this repository's `gh-pages` branch at `ryannortham.dev`. Update that branch
+when publishing changes from `main`.
 
 ## License
 
