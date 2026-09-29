@@ -1,0 +1,26 @@
+---
+import Container from "@components/Container.astro";
+import PageLayout from "@layouts/PageLayout.astro";
+---
+
+<PageLayout title="Hermes Calendar privacy policy" description="How the private Hermes Calendar connection uses Google Calendar data.">
+  <Container>
+    <article>
+      <h1>Hermes Calendar privacy policy</h1>
+      <p>Effective 29 September 2026. This policy covers the private Hermes Calendar connection operated by Ryan Northam.</p>
+
+      <h2>Data accessed</h2>
+      <p>With the account holder's Google OAuth consent, Hermes Calendar accesses calendar lists and event details. Its work-calendar grant is read-only. Its personal-calendar grant also permits creating or updating events when the account holder asks. This connection does not request Gmail or Drive access.</p>
+
+      <h2>Use and sharing</h2>
+      <p>Calendar data is used to answer the account holder's requests and carry out requested event changes. Relevant event details may be processed by the AI model provider configured in Hermes and may appear in the chat service used for the request. The operator does not sell Google user data or use it for advertising. Use of data received from Google Workspace APIs follows the Google API Services User Data Policy, including its Limited Use requirements.</p>
+
+      <h2>Storage and retention</h2>
+      <p>OAuth credentials are kept in protected files on the operator's self-hosted Hermes instance until the connection is removed or access is revoked. Calendar details included in conversations may remain in Hermes and chat-service history until those records are deleted under their respective settings.</p>
+
+      <h2>Control and contact</h2>
+      <p>The account holder can revoke access in their <a href="https://myaccount.google.com/connections">Google Account connections</a>. To ask about this connection or request removal of locally held credentials or conversation data, email <a href="mailto:ryan.northam@gmail.com">ryan.northam@gmail.com</a>.</p>
+      <p><a href="/hermes-calendar/">About Hermes Calendar</a> · <a href="/hermes-calendar/terms/">Terms of use</a></p>
+    </article>
+  </Container>
+</PageLayout>

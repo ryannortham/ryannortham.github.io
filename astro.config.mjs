@@ -5,7 +5,7 @@ import { defineConfig } from "astro/config";
 
 export default defineConfig({
   site: "https://ryannortham.dev",
-  integrations: [mdx(), sitemap()],
+  integrations: [mdx(), sitemap({ filter: (page) => !new URL(page).pathname.startsWith("/hermes-calendar/") })],
   markdown: {
     shikiConfig: {
       themes: {
